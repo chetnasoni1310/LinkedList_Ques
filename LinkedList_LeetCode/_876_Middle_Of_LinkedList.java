@@ -1,7 +1,18 @@
 public class _876_Middle_Of_LinkedList {
     public ListNode middleNode(ListNode head) {
-        int middle= length(head) /2;
-        return getNode(head,middle);
+
+        //Method 1 
+      /*   int middle= length(head) /2;
+        return getNode(head,middle);  */
+
+        ListNode slow=head;
+        ListNode fast=head;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+         }
+
+          return slow;
     }
     private ListNode getNode(ListNode head,int k)
     {
@@ -24,4 +35,7 @@ public class _876_Middle_Of_LinkedList {
         }
         return length;
     }
+
+
+
 }
