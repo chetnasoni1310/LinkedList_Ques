@@ -19,4 +19,17 @@ public class _141_Linked_List_Cycle {
         }
         return false;
     }
+
+    public int lengthOf_cycle(ListNode head,ListNode Meeting_Point)
+    {
+         int length=0;
+         ListNode slow=Meeting_Point;
+         ListNode fast=Meeting_Point;
+
+        do{   
+            length++;
+            slow=slow.next;
+        }while(slow!=fast);
+        return length;
+    }
 }
